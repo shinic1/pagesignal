@@ -15,6 +15,10 @@ The prototype connects three experiences:
 
 All publication content, people, analytics, and benchmark results are synthetic.
 
+## Live demo
+
+[Open PageSignal](https://pagesignal.pages.dev) — deployed on Cloudflare.
+
 ## Product principles
 
 - **Evidence before fluency.** Every supported answer links back to a source
@@ -61,6 +65,23 @@ Open `http://localhost:3000`.
 Vapi is optional. Without its public key and assistant ID, the microphone button
 uses supported browser speech APIs and routes the transcript through the local
 grounded endpoint.
+
+## Deploy to Cloudflare
+
+The public Pages hostname forwards to the full-stack Worker through
+`cloudflare-pages/_worker.js`. For the first release, create the Pages project
+and configure its upstream:
+
+```bash
+npx wrangler pages project create pagesignal --production-branch main
+npx wrangler pages secret put UPSTREAM_ORIGIN --project-name pagesignal
+```
+
+Then deploy both layers:
+
+```bash
+npm run deploy
+```
 
 ## Validate
 

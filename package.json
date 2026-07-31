@@ -6,6 +6,9 @@
   "scripts": {
     "dev": "vinext dev",
     "build": "vinext build",
+    "deploy": "npm run deploy:worker && npm run deploy:site",
+    "deploy:worker": "npm run build && vinext-cloudflare deploy --config dist/server/wrangler.json",
+    "deploy:site": "wrangler pages deploy cloudflare-pages --project-name pagesignal --branch main",
     "start": "wrangler dev --config dist/server/wrangler.json",
     "lint": "oxlint .",
     "typecheck": "tsc --noEmit",
