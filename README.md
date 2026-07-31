@@ -1,6 +1,6 @@
-# Voice Lab
+# PageSignal
 
-Voice Lab is an independent product concept for turning a digital publication
+PageSignal is an independent product concept for turning a digital publication
 into a grounded, conversational experience—and turning reader questions into
 measurable product learning.
 
@@ -14,7 +14,6 @@ The prototype connects three experiences:
    convert content gaps into an editorial backlog.
 
 All publication content, people, analytics, and benchmark results are synthetic.
-The project is not affiliated with or endorsed by Joomag.
 
 ## Product principles
 
@@ -34,6 +33,7 @@ The project is not affiliated with or endorsed by Joomag.
 - React 19, Next.js-compatible App Router, TypeScript, and vinext
 - Cloudflare Workers runtime
 - Vapi Web SDK for the production real-time voice path
+- Supabase/Postgres event storage with a server-only service role boundary
 - Browser speech recognition as a credential-free preview
 - Deterministic, citation-bearing scenario engine
 - Vitest product-behavior evaluations
@@ -42,6 +42,9 @@ The production architecture provides a server-side Vapi tool boundary at
 `POST /api/vapi/tools`. A configured Vapi assistant calls
 `answer_publication_question`; the server validates the request, retrieves the
 grounded scenario result, and returns structured citations and safe actions.
+Reader events are accepted at `POST /api/events`; when Supabase is configured,
+the server stores allowlisted event types without raw question text or direct
+reader identifiers.
 
 ## Run locally
 
@@ -83,3 +86,11 @@ npm run build
 - No external email, reservation, CRM, or publication state changes occur in
   the public scenario.
 - No call recording is required for this concept.
+- The browser never receives a Supabase service role key.
+
+## Documentation
+
+- [Product brief](docs/product-brief.md)
+- [Architecture](docs/architecture.md)
+- [Vapi assistant specification](docs/vapi-assistant-prompt.md)
+- [Security and data handling](SECURITY.md)

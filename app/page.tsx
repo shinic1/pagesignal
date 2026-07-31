@@ -1,5 +1,5 @@
-import { VoiceLab } from "@/src/components/VoiceLab";
+import { PageSignal } from "@/src/components/PageSignal";
 
 export default function Home() {
-  return <VoiceLab />;
+  return <PageSignal />;
 }

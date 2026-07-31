@@ -76,6 +76,18 @@ export function ExperimentWorkspace() {
   const runEvaluation = () => {
     setProgress(0);
     setIsRunning(true);
+    void fetch("/api/events", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({
+        eventType: "experiment.replayed",
+        properties: {
+          promptVersion,
+          candidateCount: evalModels.length,
+          caseCount: evalCases.length,
+        },
+      }),
+    }).catch(() => undefined);
   };
 
   return (

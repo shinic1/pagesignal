@@ -1,6 +1,7 @@
 "use client";
 
-import { FormEvent, useMemo, useRef, useState } from "react";
+import { FormEvent, useEffect, useMemo, useRef, useState } from "react";
+import Vapi from "@vapi-ai/web";
 
 import { Icon } from "@/src/components/Icon";
 import {
@@ -38,6 +39,10 @@ type RecognitionInstance = {
 };
 
 type RecognitionConstructor = new () => RecognitionInstance;
+
+function isRecord(value: unknown): value is Record<string, unknown> {
+  return Boolean(value) && typeof value === "object" && !Array.isArray(value);
+}
 
 const initialMessages: ConversationMessage[] = [
   {
@@ -126,10 +131,19 @@ export function ReaderWorkspace() {
   const [isThinking, setIsThinking] = useState(false);
   const [isListening, setIsListening] = useState(false);
   const [voiceAvailable, setVoiceAvailable] = useState(true);
+  const [voiceTransport, setVoiceTransport] = useState<"vapi" | "browser">(
+    "browser",
+  );
+  const [voiceError, setVoiceError] = useState<string | null>(null);
   const [agendaSaved, setAgendaSaved] = useState(false);
   const [activeAction, setActiveAction] = useState<AssistantAction | null>(null);
   const transcriptRef = useRef<HTMLDivElement>(null);
   const recognitionRef = useRef<RecognitionInstance | null>(null);
+  const vapiRef = useRef<Vapi | null>(null);
+  const askRef = useRef<(text: string) => Promise<void>>(async () => undefined);
+  const vapiPublicKey = process.env.NEXT_PUBLIC_VAPI_PUBLIC_KEY;
+  const vapiAssistantId = process.env.NEXT_PUBLIC_VAPI_ASSISTANT_ID;
+  const vapiConfigured = Boolean(vapiPublicKey && vapiAssistantId);
 
   const visiblePages = useMemo(() => {
     if (currentPage >= publicationPages.length) {
@@ -144,6 +158,89 @@ export function ReaderWorkspace() {
       Math.max(1, Math.min(publicationPages.length, Math.floor(page))),
     );
   };
+
+  useEffect(() => {
+    if (!vapiPublicKey || !vapiAssistantId) return;
+
+    const vapi = new Vapi(vapiPublicKey);
+    const handleStart = () => {
+      setVoiceTransport("vapi");
+      setIsListening(true);
+      setVoiceError(null);
+    };
+    const handleEnd = () => setIsListening(false);
+    const handleError = () => {
+      setVoiceError("The live voice session could not start.");
+      setIsListening(false);
+    };
+    const handleMessage = (message: unknown) => {
+      if (!isRecord(message)) return;
+
+      if (
+        message.type === "transcript" &&
+        message.transcriptType === "final" &&
+        message.role === "user" &&
+        typeof message.transcript === "string"
+      ) {
+        const transcript = message.transcript.trim();
+        if (transcript) void askRef.current(transcript);
+      }
+
+      if (message.type !== "tool-calls" || !Array.isArray(message.toolCallList)) {
+        return;
+      }
+
+      for (const value of message.toolCallList) {
+        if (!isRecord(value)) continue;
+        const functionValue = isRecord(value.function)
+          ? value.function
+          : undefined;
+        const name =
+          typeof value.name === "string"
+            ? value.name
+            : typeof functionValue?.name === "string"
+              ? functionValue.name
+              : "";
+        if (name !== "navigate_to_page") continue;
+
+        const rawArguments =
+          value.arguments ?? functionValue?.arguments ?? value.parameters;
+        let parameters: Record<string, unknown> = {};
+        if (typeof rawArguments === "string") {
+          try {
+            const parsed = JSON.parse(rawArguments) as unknown;
+            if (isRecord(parsed)) parameters = parsed;
+          } catch {
+            parameters = {};
+          }
+        } else if (isRecord(rawArguments)) {
+          parameters = rawArguments;
+        }
+
+        if (typeof parameters.page === "number") {
+          setCurrentPage(
+            Math.max(
+              1,
+              Math.min(publicationPages.length, Math.floor(parameters.page)),
+            ),
+          );
+        }
+      }
+    };
+
+    vapi.on("call-start", handleStart);
+    vapi.on("call-end", handleEnd);
+    vapi.on("error", handleError);
+    vapi.on("message", handleMessage);
+    vapiRef.current = vapi;
+    setVoiceTransport("vapi");
+
+    return () => {
+      vapi.removeAllListeners();
+      void vapi.stop();
+      vapiRef.current = null;
+    };
+  }, [vapiAssistantId, vapiPublicKey]);
 
   const appendResponse = (text: string, response: AssistantResponse) => {
     const timestamp = Date.now();
@@ -174,6 +271,22 @@ export function ReaderWorkspace() {
         ? response.action
         : null,
     );
+    void fetch("/api/events", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({
+        eventType:
+          response.action?.name === "record_content_gap"
+            ? "reader.content_gap"
+            : "reader.answer",
+        page: response.navigateTo,
+        properties: {
+          citationCount: response.citations.length,
+          action: response.action?.name ?? "none",
+          transport: voiceTransport,
+        },
+      }),
+    }).catch(() => undefined);
     window.setTimeout(() => {
       transcriptRef.current?.scrollTo({
         top: transcriptRef.current.scrollHeight,
@@ -211,6 +324,7 @@ export function ReaderWorkspace() {
       setIsThinking(false);
     }
   };
+  askRef.current = ask;
 
   const handleSubmit = (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();
@@ -219,8 +333,21 @@ export function ReaderWorkspace() {
 
   const startVoice = () => {
     if (isListening) {
+      if (voiceTransport === "vapi") {
+        void vapiRef.current?.stop();
+      }
       recognitionRef.current?.stop();
       setIsListening(false);
+      return;
+    }
+
+    if (vapiConfigured && vapiRef.current && vapiAssistantId) {
+      setVoiceError(null);
+      setIsListening(true);
+      void vapiRef.current.start(vapiAssistantId).catch(() => {
+        setVoiceError("The live voice session could not start.");
+        setIsListening(false);
+      });
       return;
     }
 
@@ -294,6 +421,17 @@ export function ReaderWorkspace() {
         action: confirmed,
       },
     ]);
+    void fetch("/api/events", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({
+        eventType: "reader.action_confirmed",
+        properties: {
+          action: activeAction.name,
+          transport: voiceTransport,
+        },
+      }),
+    }).catch(() => undefined);
     setActiveAction(null);
   };
 
@@ -405,7 +543,15 @@ export function ReaderWorkspace() {
               </span>
             </div>
           </div>
-          <span className="scenario-pill">Scenario mode</span>
+          <span
+            className={`scenario-pill ${vapiConfigured ? "vapi-ready" : ""}`}
+          >
+            {vapiConfigured
+              ? isListening
+                ? "Vapi live"
+                : "Vapi ready"
+              : "Scenario mode"}
+          </span>
         </header>
 
         <div className="copilot-transcript" ref={transcriptRef}>
@@ -543,6 +689,12 @@ export function ReaderWorkspace() {
         </div>
 
         <div className="prompt-suggestions">
+          {voiceError ? (
+            <span className="voice-error">
+              <Icon name="activity" size={12} />
+              {voiceError}
+            </span>
+          ) : null}
           {demoPrompts.map((prompt) => (
             <button
               type="button"
@@ -588,7 +740,7 @@ export function ReaderWorkspace() {
         <div className="copilot-footer">
           <span>
             <Icon name="mic" size={11} />
-            Browser voice preview
+            {vapiConfigured ? "Vapi real-time voice" : "Browser voice preview"}
           </span>
           <span>Actions are simulated</span>
         </div>

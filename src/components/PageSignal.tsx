@@ -34,7 +34,7 @@ const navItems: {
   },
 ];
 
-export function VoiceLab() {
+export function PageSignal() {
   const [view, setView] = useState<WorkspaceView>("reader");
   const [navOpen, setNavOpen] = useState(false);
   const [now, setNow] = useState("10:24");
@@ -69,8 +69,8 @@ export function VoiceLab() {
             <span />
           </div>
           <div>
-            <strong>Voice Lab</strong>
-            <span>Conversational content</span>
+            <strong>PageSignal</strong>
+            <span>Conversational publications</span>
           </div>
           <button
             className="mobile-close"
@@ -182,7 +182,7 @@ export function VoiceLab() {
             </div>
             <a
               className="source-link"
-              href="https://github.com/shinic1/joomag-ai-lab"
+              href="https://github.com/shinic1/pagesignal"
               target="_blank"
               rel="noreferrer"
             >
