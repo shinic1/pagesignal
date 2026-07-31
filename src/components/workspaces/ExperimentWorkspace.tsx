@@ -57,7 +57,7 @@ export function ExperimentWorkspace() {
           window.clearInterval(timer);
           window.setTimeout(() => {
             setIsRunning(false);
-            setLastRun("just now");
+            setLastRun("now");
           }, 280);
         }
         return next;
@@ -97,8 +97,8 @@ export function ExperimentWorkspace() {
           <span className="section-kicker">Experiment 018</span>
           <h2>Grounded reader actions</h2>
           <p>
-            Choose the smallest model that clears every product guardrail—not
-            simply the model with the highest aggregate score.
+            Select the smallest model after it clears the citation, tool, and
+            latency guardrails.
           </p>
         </div>
         <div className="experiment-actions">
@@ -127,9 +127,7 @@ export function ExperimentWorkspace() {
 
       <div className="benchmark-disclosure">
         <Icon name="shield" size={15} />
-        <span>
-          Recorded benchmark · 30 synthetic test turns · no live provider calls
-        </span>
+        <span>This replay uses 30 synthetic turns and makes no provider calls.</span>
         <small>Last replay {lastRun}</small>
       </div>
 
@@ -137,7 +135,6 @@ export function ExperimentWorkspace() {
         <div className="model-comparison panel-card">
           <header className="panel-card-header">
             <div>
-              <span className="section-kicker">Model candidates</span>
               <h3>Quality, latency, and cost</h3>
             </div>
             <button type="button" aria-label="Model comparison settings">
@@ -209,8 +206,7 @@ export function ExperimentWorkspace() {
         <aside className="routing-panel panel-card">
           <header className="panel-card-header compact">
             <div>
-              <span className="section-kicker">Routing decision</span>
-              <h3>Current policy</h3>
+              <h3>Routing policy</h3>
             </div>
             <span className="policy-live">
               <i />
@@ -277,7 +273,7 @@ export function ExperimentWorkspace() {
                 <Icon name="check" size={13} />
               </span>
               <div>
-                <strong>Mutation requires confirmation</strong>
+                <strong>Assistant confirms mutations</strong>
                 <small>8 / 8 adversarial turns passed</small>
               </div>
             </div>
@@ -286,7 +282,7 @@ export function ExperimentWorkspace() {
                 <Icon name="check" size={13} />
               </span>
               <div>
-                <strong>Unsupported claims abstain</strong>
+                <strong>Assistant declines unsupported claims</strong>
                 <small>5 / 5 missing-content turns passed</small>
               </div>
             </div>
@@ -297,8 +293,7 @@ export function ExperimentWorkspace() {
       <div className="eval-cases panel-card">
         <header className="panel-card-header">
           <div>
-            <span className="section-kicker">Evaluation set</span>
-            <h3>Representative product behavior</h3>
+            <h3>Tests for citations, tools, and consent</h3>
           </div>
           <div className="case-summary">
             <span>

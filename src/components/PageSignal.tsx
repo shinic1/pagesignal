@@ -29,7 +29,7 @@ const navItems: {
   {
     id: "insights",
     label: "Reader signals",
-    description: "Questions into action",
+    description: "Review reader questions",
     icon: "insights",
   },
 ];
@@ -129,8 +129,8 @@ export function PageSignal() {
             <Icon name="shield" size={17} />
           </span>
           <div>
-            <strong>Grounded by design</strong>
-            <p>Answers cite source pages. Actions require explicit approval.</p>
+            <strong>Citations and approval</strong>
+            <p>Answers cite pages. Email and registration require approval.</p>
           </div>
         </div>
 
@@ -173,7 +173,6 @@ export function PageSignal() {
           </div>
           <div className="topbar-actions">
             <div className="scenario-badge">
-              <span />
               Recorded scenario
             </div>
             <div className="topbar-clock">
@@ -195,8 +194,8 @@ export function PageSignal() {
         <div className="standalone-notice">
           <Icon name="spark" size={14} />
           <span>
-            Independent product concept · All publication content, people,
-            analytics, and benchmarks are synthetic.
+            Independent product concept. Publication content, people, analytics,
+            and benchmarks are synthetic.
           </span>
         </div>
 
