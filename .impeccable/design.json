@@ -1,0 +1,505 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-07-31T03:29:11Z",
+  "title": "Design System: PageSignal",
+  "extensions": {
+    "colorMeta": {
+      "safety-orange": {
+        "role": "primary",
+        "displayName": "Safety Orange",
+        "canonical": "#f04b23",
+        "tonalRamp": [
+          "oklch(15% 0.19 35)",
+          "oklch(27% 0.19 35)",
+          "oklch(39% 0.19 35)",
+          "oklch(51% 0.19 35)",
+          "oklch(63% 0.19 35)",
+          "oklch(74% 0.15 35)",
+          "oklch(85% 0.09 35)",
+          "oklch(95% 0.03 35)"
+        ]
+      },
+      "cool-proof-stock": {
+        "role": "neutral",
+        "displayName": "Cool Proof Stock",
+        "canonical": "#efefec",
+        "tonalRamp": [
+          "oklch(15% 0.006 105)",
+          "oklch(27% 0.006 105)",
+          "oklch(39% 0.006 105)",
+          "oklch(51% 0.006 105)",
+          "oklch(63% 0.006 105)",
+          "oklch(74% 0.006 105)",
+          "oklch(85% 0.006 105)",
+          "oklch(95% 0.006 105)"
+        ]
+      },
+      "navigation-stock": {
+        "role": "neutral",
+        "displayName": "Navigation Stock",
+        "canonical": "#f8f8f5",
+        "tonalRamp": [
+          "oklch(15% 0.005 105)",
+          "oklch(27% 0.005 105)",
+          "oklch(39% 0.005 105)",
+          "oklch(51% 0.005 105)",
+          "oklch(63% 0.005 105)",
+          "oklch(74% 0.005 105)",
+          "oklch(85% 0.005 105)",
+          "oklch(95% 0.005 105)"
+        ]
+      },
+      "desk-panel": {
+        "role": "neutral",
+        "displayName": "Desk Panel",
+        "canonical": "#fafaf8",
+        "tonalRamp": [
+          "oklch(15% 0.004 105)",
+          "oklch(27% 0.004 105)",
+          "oklch(39% 0.004 105)",
+          "oklch(51% 0.004 105)",
+          "oklch(63% 0.004 105)",
+          "oklch(74% 0.004 105)",
+          "oklch(85% 0.004 105)",
+          "oklch(95% 0.004 105)"
+        ]
+      },
+      "press-white": {
+        "role": "neutral",
+        "displayName": "Press White",
+        "canonical": "#ffffff",
+        "tonalRamp": [
+          "oklch(15% 0 0)",
+          "oklch(27% 0 0)",
+          "oklch(39% 0 0)",
+          "oklch(51% 0 0)",
+          "oklch(63% 0 0)",
+          "oklch(74% 0 0)",
+          "oklch(85% 0 0)",
+          "oklch(95% 0 0)"
+        ]
+      },
+      "publication-paper": {
+        "role": "neutral",
+        "displayName": "Publication Paper",
+        "canonical": "#fffefa",
+        "tonalRamp": [
+          "oklch(15% 0.012 88)",
+          "oklch(27% 0.012 88)",
+          "oklch(39% 0.012 88)",
+          "oklch(51% 0.012 88)",
+          "oklch(63% 0.012 88)",
+          "oklch(74% 0.012 88)",
+          "oklch(85% 0.012 88)",
+          "oklch(95% 0.012 88)"
+        ]
+      },
+      "black-ink": {
+        "role": "neutral",
+        "displayName": "Black Ink",
+        "canonical": "#171714",
+        "tonalRamp": [
+          "oklch(15% 0.009 105)",
+          "oklch(27% 0.009 105)",
+          "oklch(39% 0.009 105)",
+          "oklch(51% 0.009 105)",
+          "oklch(63% 0.009 105)",
+          "oklch(74% 0.009 105)",
+          "oklch(85% 0.009 105)",
+          "oklch(95% 0.009 105)"
+        ]
+      },
+      "operator-muted": {
+        "role": "neutral",
+        "displayName": "Operator Muted",
+        "canonical": "#696963",
+        "tonalRamp": [
+          "oklch(15% 0.009 105)",
+          "oklch(27% 0.009 105)",
+          "oklch(39% 0.009 105)",
+          "oklch(51% 0.009 105)",
+          "oklch(63% 0.009 105)",
+          "oklch(74% 0.009 105)",
+          "oklch(85% 0.009 105)",
+          "oklch(95% 0.009 105)"
+        ]
+      },
+      "quiet-muted": {
+        "role": "neutral",
+        "displayName": "Quiet Muted",
+        "canonical": "#8a8a83",
+        "tonalRamp": [
+          "oklch(15% 0.009 105)",
+          "oklch(27% 0.009 105)",
+          "oklch(39% 0.009 105)",
+          "oklch(51% 0.009 105)",
+          "oklch(63% 0.009 105)",
+          "oklch(74% 0.009 105)",
+          "oklch(85% 0.009 105)",
+          "oklch(95% 0.009 105)"
+        ]
+      },
+      "charcoal-rule": {
+        "role": "neutral",
+        "displayName": "Charcoal Rule",
+        "canonical": "#cecec8",
+        "tonalRamp": [
+          "oklch(15% 0.008 105)",
+          "oklch(27% 0.008 105)",
+          "oklch(39% 0.008 105)",
+          "oklch(51% 0.008 105)",
+          "oklch(63% 0.008 105)",
+          "oklch(74% 0.008 105)",
+          "oklch(85% 0.008 105)",
+          "oklch(95% 0.008 105)"
+        ]
+      },
+      "soft-rule": {
+        "role": "neutral",
+        "displayName": "Soft Rule",
+        "canonical": "#e4e4df",
+        "tonalRamp": [
+          "oklch(15% 0.007 105)",
+          "oklch(27% 0.007 105)",
+          "oklch(39% 0.007 105)",
+          "oklch(51% 0.007 105)",
+          "oklch(63% 0.007 105)",
+          "oklch(74% 0.007 105)",
+          "oklch(85% 0.007 105)",
+          "oklch(95% 0.007 105)"
+        ]
+      },
+      "press-rule": {
+        "role": "neutral",
+        "displayName": "Press Rule",
+        "canonical": "#bdbdb7",
+        "tonalRamp": [
+          "oklch(15% 0.008 105)",
+          "oklch(27% 0.008 105)",
+          "oklch(39% 0.008 105)",
+          "oklch(51% 0.008 105)",
+          "oklch(63% 0.008 105)",
+          "oklch(74% 0.008 105)",
+          "oklch(85% 0.008 105)",
+          "oklch(95% 0.008 105)"
+        ]
+      },
+      "proof-stage": {
+        "role": "neutral",
+        "displayName": "Proof Stage",
+        "canonical": "#e7e7e2",
+        "tonalRamp": [
+          "oklch(15% 0.007 105)",
+          "oklch(27% 0.007 105)",
+          "oklch(39% 0.007 105)",
+          "oklch(51% 0.007 105)",
+          "oklch(63% 0.007 105)",
+          "oklch(74% 0.007 105)",
+          "oklch(85% 0.007 105)",
+          "oklch(95% 0.007 105)"
+        ]
+      },
+      "signal-wash": {
+        "role": "primary",
+        "displayName": "Signal Wash",
+        "canonical": "#fff0eb",
+        "tonalRamp": [
+          "oklch(15% 0.035 35)",
+          "oklch(27% 0.035 35)",
+          "oklch(39% 0.035 35)",
+          "oklch(51% 0.035 35)",
+          "oklch(63% 0.035 35)",
+          "oklch(74% 0.035 35)",
+          "oklch(85% 0.035 35)",
+          "oklch(95% 0.035 35)"
+        ]
+      },
+      "proof-coral": {
+        "role": "secondary",
+        "displayName": "Proof Coral",
+        "canonical": "#b85d43",
+        "tonalRamp": [
+          "oklch(15% 0.10 35)",
+          "oklch(27% 0.10 35)",
+          "oklch(39% 0.10 35)",
+          "oklch(51% 0.10 35)",
+          "oklch(63% 0.10 35)",
+          "oklch(74% 0.09 35)",
+          "oklch(85% 0.06 35)",
+          "oklch(95% 0.025 35)"
+        ]
+      },
+      "evidence-teal": {
+        "role": "secondary",
+        "displayName": "Evidence Teal",
+        "canonical": "#39797c",
+        "tonalRamp": [
+          "oklch(15% 0.07 195)",
+          "oklch(27% 0.07 195)",
+          "oklch(39% 0.07 195)",
+          "oklch(51% 0.07 195)",
+          "oklch(63% 0.07 195)",
+          "oklch(74% 0.06 195)",
+          "oklch(85% 0.04 195)",
+          "oklch(95% 0.018 195)"
+        ]
+      },
+      "proof-lime": {
+        "role": "secondary",
+        "displayName": "Proof Lime",
+        "canonical": "#b9db6a",
+        "tonalRamp": [
+          "oklch(15% 0.12 120)",
+          "oklch(27% 0.12 120)",
+          "oklch(39% 0.12 120)",
+          "oklch(51% 0.12 120)",
+          "oklch(63% 0.12 120)",
+          "oklch(74% 0.11 120)",
+          "oklch(85% 0.07 120)",
+          "oklch(95% 0.025 120)"
+        ]
+      },
+      "warning-gold": {
+        "role": "secondary",
+        "displayName": "Warning Gold",
+        "canonical": "#d29a31",
+        "tonalRamp": [
+          "oklch(15% 0.12 75)",
+          "oklch(27% 0.12 75)",
+          "oklch(39% 0.12 75)",
+          "oklch(51% 0.12 75)",
+          "oklch(63% 0.12 75)",
+          "oklch(74% 0.10 75)",
+          "oklch(85% 0.06 75)",
+          "oklch(95% 0.025 75)"
+        ]
+      },
+      "grounded-green": {
+        "role": "secondary",
+        "displayName": "Grounded Green",
+        "canonical": "#24a787",
+        "tonalRamp": [
+          "oklch(15% 0.10 170)",
+          "oklch(27% 0.10 170)",
+          "oklch(39% 0.10 170)",
+          "oklch(51% 0.10 170)",
+          "oklch(63% 0.10 170)",
+          "oklch(74% 0.08 170)",
+          "oklch(85% 0.05 170)",
+          "oklch(95% 0.02 170)"
+        ]
+      }
+    },
+    "typographyMeta": {
+      "display": {
+        "displayName": "Workspace Display",
+        "purpose": "Large operating questions and workspace introductions."
+      },
+      "headline": {
+        "displayName": "Publication Headline",
+        "purpose": "Editorial headlines inside the synthetic publication proof only."
+      },
+      "title": {
+        "displayName": "Desk Title",
+        "purpose": "Topbar and primary local headings."
+      },
+      "body": {
+        "displayName": "Operational Body",
+        "purpose": "Conversation, evidence descriptions, and explanatory copy."
+      },
+      "label": {
+        "displayName": "Production Label",
+        "purpose": "Buttons, statuses, table headers, folios, and compact controls."
+      }
+    },
+    "shadows": [
+      {
+        "name": "loose-proof",
+        "value": "0 14px 36px rgba(23, 23, 20, 0.14)",
+        "purpose": "Separates the selected publication page from the gray proof stage."
+      },
+      {
+        "name": "proof-thumbnail",
+        "value": "0 3px 8px rgba(23, 23, 20, 0.10)",
+        "purpose": "Gives flatplan thumbnails restrained paper presence."
+      },
+      {
+        "name": "mobile-navigation",
+        "value": "18px 0 45px rgba(23, 23, 20, 0.16)",
+        "purpose": "Clarifies that the open navigation rail overlays mobile content."
+      }
+    ],
+    "motion": [
+      {
+        "name": "state-fast",
+        "value": "150ms ease",
+        "purpose": "Compact row and control state transitions."
+      },
+      {
+        "name": "navigation-slide",
+        "value": "180ms ease",
+        "purpose": "Off-canvas navigation movement."
+      },
+      {
+        "name": "thinking-lift",
+        "value": "1s cubic-bezier(0.16, 1, 0.3, 1)",
+        "purpose": "Staggers the three thinking indicators."
+      },
+      {
+        "name": "voice-ring",
+        "value": "1.4s ease-out",
+        "purpose": "Expands and fades the live voice indicator."
+      },
+      {
+        "name": "reduced-motion",
+        "value": "0.001ms",
+        "purpose": "Collapses animation and transition duration when reduced motion is requested."
+      }
+    ],
+    "breakpoints": [
+      {
+        "name": "mobile",
+        "value": "640px"
+      },
+      {
+        "name": "stacked-workspace",
+        "value": "920px"
+      },
+      {
+        "name": "compact-desktop",
+        "value": "1180px"
+      }
+    ]
+  },
+  "components": [
+    {
+      "name": "Primary Orange Action",
+      "kind": "button",
+      "refersTo": "button-primary",
+      "description": "Consequential production action with the system's one high-visibility signal color.",
+      "html": "<button class=\"ds-btn-primary\" type=\"button\"><svg viewBox=\"0 0 24 24\" aria-hidden=\"true\"><path d=\"M5 12.5l4 4L19 6.5\"/></svg>QUEUE FOR NEXT ISSUE</button>",
+      "css": ".ds-btn-primary { align-items: center; background: var(--signal, #f04b23); border: 1px solid var(--signal, #f04b23); border-radius: 2px; color: #fff; cursor: pointer; display: inline-flex; font: 800 11px/1.4 ui-sans-serif, -apple-system, BlinkMacSystemFont, \"Segoe UI\", sans-serif; gap: 6px; height: 44px; letter-spacing: 0.04em; padding: 0 13px; } .ds-btn-primary svg { fill: none; height: 16px; stroke: currentColor; stroke-linecap: square; stroke-linejoin: miter; stroke-width: 2; width: 16px; } .ds-btn-primary:hover { background: #c93c1b; border-color: #c93c1b; } .ds-btn-primary:active { transform: translateY(1px); } .ds-btn-primary:focus-visible { outline: 3px solid rgba(240, 75, 35, 0.38); outline-offset: 2px; }"
+    },
+    {
+      "name": "Ink Voice Action",
+      "kind": "button",
+      "refersTo": "button-ink",
+      "description": "Neutral black action used to start a voice session before live state turns orange.",
+      "html": "<button class=\"ds-btn-voice\" type=\"button\"><svg viewBox=\"0 0 24 24\" aria-hidden=\"true\"><rect x=\"9\" y=\"3\" width=\"6\" height=\"12\" rx=\"3\"/><path d=\"M5 11a7 7 0 0 0 14 0M12 18v3M8 21h8\"/></svg>START VOICE</button>",
+      "css": ".ds-btn-voice { align-items: center; background: var(--ink, #171714); border: 1px solid var(--ink, #171714); border-radius: 2px; color: #fff; cursor: pointer; display: inline-flex; font: 800 11px/1.4 ui-sans-serif, -apple-system, BlinkMacSystemFont, \"Segoe UI\", sans-serif; gap: 6px; height: 44px; padding: 0 13px; } .ds-btn-voice svg { fill: none; height: 16px; stroke: currentColor; stroke-width: 1.8; width: 16px; } .ds-btn-voice:hover { background: var(--signal, #f04b23); border-color: var(--signal, #f04b23); } .ds-btn-voice:active { transform: translateY(1px); } .ds-btn-voice:focus-visible { outline: 3px solid rgba(240, 75, 35, 0.38); outline-offset: 2px; }"
+    },
+    {
+      "name": "Conversation Field",
+      "kind": "input",
+      "refersTo": "conversation-field",
+      "description": "Ruled composer that keeps voice, the reader question, and send action in one operational line.",
+      "html": "<form class=\"ds-conversation\"><button class=\"ds-conversation-voice\" type=\"button\" aria-label=\"Start voice\"><svg viewBox=\"0 0 24 24\" aria-hidden=\"true\"><rect x=\"9\" y=\"3\" width=\"6\" height=\"12\" rx=\"3\"/><path d=\"M5 11a7 7 0 0 0 14 0M12 18v3\"/></svg></button><input aria-label=\"Ask about the publication\" placeholder=\"Ask a question about your content…\"/><button class=\"ds-conversation-send\" type=\"submit\" aria-label=\"Send question\"><svg viewBox=\"0 0 24 24\" aria-hidden=\"true\"><path d=\"M3 11.5L21 3l-6.5 18-3-7-8.5-2.5zM11.5 14L21 3\"/></svg></button></form>",
+      "css": ".ds-conversation { align-items: center; background: #fff; border: 1px solid #9f9f99; border-radius: 2px; display: flex; gap: 7px; min-height: 50px; padding: 5px 6px; } .ds-conversation:focus-within { border-color: var(--ink, #171714); } .ds-conversation input { background: transparent; border: 0; color: var(--ink, #171714); flex: 1; font: 400 12px/1.6 ui-sans-serif, -apple-system, BlinkMacSystemFont, \"Segoe UI\", sans-serif; min-width: 180px; outline: 0; } .ds-conversation input::placeholder { color: #8a8a83; font-style: italic; } .ds-conversation button { align-items: center; border-radius: 2px; cursor: pointer; display: inline-flex; height: 38px; justify-content: center; min-width: 38px; } .ds-conversation-voice { background: transparent; border: 1px solid var(--line, #cecec8); color: var(--ink, #171714); } .ds-conversation-send { background: var(--signal, #f04b23); border: 1px solid var(--signal, #f04b23); color: #fff; } .ds-conversation svg { fill: none; height: 17px; stroke: currentColor; stroke-linejoin: miter; stroke-width: 1.8; width: 17px; } .ds-conversation button:hover { border-color: var(--signal, #f04b23); } .ds-conversation button:focus-visible { outline: 3px solid rgba(240, 75, 35, 0.38); outline-offset: 2px; }"
+    },
+    {
+      "name": "Active Rail Navigation",
+      "kind": "nav",
+      "refersTo": "button-ghost",
+      "description": "Light production rail whose active area is marked by an orange leading rule.",
+      "html": "<nav class=\"ds-rail\" aria-label=\"Product areas\"><button class=\"ds-rail-item ds-active\" type=\"button\"><svg viewBox=\"0 0 24 24\" aria-hidden=\"true\"><path d=\"M4 5.5A3.5 3.5 0 0 1 7.5 2h9A3.5 3.5 0 0 1 20 5.5v7a3.5 3.5 0 0 1-3.5 3.5H10l-5 4v-4.5A3.5 3.5 0 0 1 4 13z\"/></svg><span>Reader</span></button><button class=\"ds-rail-item\" type=\"button\"><svg viewBox=\"0 0 24 24\" aria-hidden=\"true\"><path d=\"M9 3h6M10 3v6l-6 10h16L14 9V3\"/></svg><span>Experiments</span></button></nav>",
+      "css": ".ds-rail { background: #f8f8f5; border: 1px solid #bdbdb7; display: grid; padding: 12px 0; width: 196px; } .ds-rail-item { align-items: center; background: transparent; border: 0; border-left: 3px solid transparent; color: #55554f; cursor: pointer; display: flex; font: 700 12px/1.4 ui-sans-serif, -apple-system, BlinkMacSystemFont, \"Segoe UI\", sans-serif; gap: 8px; min-height: 49px; padding: 8px 16px 8px 13px; text-align: left; } .ds-rail-item svg { fill: none; height: 18px; stroke: currentColor; stroke-width: 1.6; width: 18px; } .ds-rail-item:hover { background: #eeeeea; color: var(--ink, #171714); } .ds-rail-item.ds-active { background: #eeeeea; border-left-color: var(--signal, #f04b23); color: var(--ink, #171714); } .ds-rail-item.ds-active svg { color: var(--signal, #f04b23); } .ds-rail-item:focus-visible { outline: 3px solid rgba(240, 75, 35, 0.38); outline-offset: -3px; }"
+    },
+    {
+      "name": "Citation Card",
+      "kind": "card",
+      "refersTo": "citation-card",
+      "description": "Warm paper annotation that links an answer to an exact publication page.",
+      "html": "<button class=\"ds-citation\" type=\"button\"><span class=\"ds-citation-folio\">p. 6</span><span class=\"ds-citation-copy\"><strong>Independent Product Concept</strong><small>“Find Your Voice” workshop detail.</small></span><svg viewBox=\"0 0 24 24\" aria-hidden=\"true\"><path d=\"M9 5l7 7-7 7\"/></svg></button>",
+      "css": ".ds-citation { align-items: center; background: #fffaf7; border: 1px solid #eea58f; border-radius: 2px; color: var(--ink, #171714); cursor: pointer; display: grid; gap: 7px; grid-template-columns: 38px minmax(0, 1fr) 18px; padding: 9px; text-align: left; width: 100%; } .ds-citation-folio { color: #b73c1e; font: 850 11px/1.4 ui-sans-serif, -apple-system, BlinkMacSystemFont, \"Segoe UI\", sans-serif; } .ds-citation-copy { display: flex; flex-direction: column; min-width: 0; } .ds-citation-copy strong { font: 800 11px/1.4 ui-sans-serif, -apple-system, BlinkMacSystemFont, \"Segoe UI\", sans-serif; } .ds-citation-copy small { color: var(--muted, #696963); font: 400 11px/1.4 ui-sans-serif, -apple-system, BlinkMacSystemFont, \"Segoe UI\", sans-serif; margin-top: 3px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; } .ds-citation svg { fill: none; height: 15px; stroke: var(--muted-2, #8a8a83); stroke-width: 1.8; width: 15px; } .ds-citation:hover { background: var(--signal-soft, #fff0eb); } .ds-citation:active { border-color: var(--signal, #f04b23); } .ds-citation:focus-visible { outline: 3px solid rgba(240, 75, 35, 0.38); outline-offset: 2px; }"
+    },
+    {
+      "name": "Voice Control Strip",
+      "kind": "custom",
+      "refersTo": "button-ink",
+      "description": "Dedicated voice module with a ruled stock field and an explicit start action.",
+      "html": "<section class=\"ds-voice-strip\"><div><span><svg viewBox=\"0 0 24 24\" aria-hidden=\"true\"><rect x=\"9\" y=\"3\" width=\"6\" height=\"12\" rx=\"3\"/><path d=\"M5 11a7 7 0 0 0 14 0M12 18v3\"/></svg></span><div><strong>VAPI VOICE PREVIEW</strong><small>Recorded scenario available</small></div></div><button type=\"button\">START VOICE</button></section>",
+      "css": ".ds-voice-strip { align-items: center; background: #f3f3ef; border-bottom: 1px solid var(--line, #cecec8); border-top: 1px solid #9f9f99; display: flex; justify-content: space-between; min-height: 68px; padding: 10px 14px; } .ds-voice-strip > div { align-items: center; display: flex; gap: 9px; } .ds-voice-strip > div > span { align-items: center; border: 1px solid var(--ink, #171714); border-radius: 999px; display: inline-flex; height: 34px; justify-content: center; min-width: 34px; } .ds-voice-strip svg { fill: none; height: 16px; stroke: currentColor; stroke-width: 1.8; width: 16px; } .ds-voice-strip > div > div { display: flex; flex-direction: column; } .ds-voice-strip strong { font: 800 11px/1.4 ui-sans-serif, -apple-system, BlinkMacSystemFont, \"Segoe UI\", sans-serif; } .ds-voice-strip small { color: var(--muted, #696963); font: 400 10px/1.4 ui-sans-serif, -apple-system, BlinkMacSystemFont, \"Segoe UI\", sans-serif; margin-top: 4px; } .ds-voice-strip button { background: var(--ink, #171714); border: 1px solid var(--ink, #171714); border-radius: 2px; color: #fff; cursor: pointer; font: 800 11px/1.4 ui-sans-serif, -apple-system, BlinkMacSystemFont, \"Segoe UI\", sans-serif; height: 44px; padding: 0 13px; } .ds-voice-strip button:hover { background: var(--signal, #f04b23); border-color: var(--signal, #f04b23); } .ds-voice-strip button:focus-visible { outline: 3px solid rgba(240, 75, 35, 0.38); outline-offset: 2px; }"
+    },
+    {
+      "name": "Production Sheet",
+      "kind": "card",
+      "refersTo": "production-sheet",
+      "description": "Flat ruled container used for tables, metrics, evidence, and operational records.",
+      "html": "<article class=\"ds-production-sheet\"><header><div><small>RECORDED EVIDENCE</small><h3>Grounded answer rate</h3></div><strong>94.4%</strong></header><div class=\"ds-production-row\"><span>119 cited answers</span><span class=\"ds-production-status\">READY</span></div><div class=\"ds-production-row\"><span>7 unsupported turns declined</span><span>reviewed</span></div></article>",
+      "css": ".ds-production-sheet { background: var(--panel, #fafaf8); border: 1px solid #bdbdb7; border-radius: 0; color: var(--ink, #171714); font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, \"Segoe UI\", sans-serif; overflow: hidden; } .ds-production-sheet header { align-items: center; border-bottom: 1px solid var(--line-2, #e4e4df); display: flex; justify-content: space-between; min-height: 58px; padding: 13px 16px; } .ds-production-sheet header div { display: flex; flex-direction: column; } .ds-production-sheet h3 { font-size: 14px; letter-spacing: -0.02em; margin: 3px 0 0; } .ds-production-sheet header small { color: var(--muted, #696963); font-size: 10px; font-weight: 800; letter-spacing: 0.1em; } .ds-production-sheet header > strong { font-size: 20px; letter-spacing: -0.04em; } .ds-production-row { align-items: center; border-bottom: 1px solid var(--line-2, #e4e4df); display: flex; font-size: 11px; justify-content: space-between; min-height: 44px; padding: 0 16px; } .ds-production-row:last-child { border-bottom: 0; } .ds-production-row > span:last-child { color: var(--muted, #696963); } .ds-production-status { color: var(--green, #24a787) !important; font-weight: 850; letter-spacing: 0.08em; }"
+    },
+    {
+      "name": "Flatplan Proof Selector",
+      "kind": "custom",
+      "refersTo": "production-sheet",
+      "description": "Miniature publication page with folio, title, and orange selected-proof treatment.",
+      "html": "<button class=\"ds-flatplan ds-active\" type=\"button\"><span class=\"ds-flatplan-page\"><small>6</small><i></i><i></i><i></i></span><span class=\"ds-flatplan-meta\"><small>PAGE 6</small><strong>Independent product concept.</strong></span></button>",
+      "css": ".ds-flatplan { align-items: center; background: #fff8f5; border: 0; border-bottom: 3px solid var(--signal, #f04b23); border-right: 1px solid var(--line, #cecec8); cursor: pointer; display: grid; gap: 7px; grid-template-columns: 44px minmax(0, 1fr); min-width: 132px; padding: 12px 7px 9px; text-align: left; } .ds-flatplan-page { background: #fff; border: 1px solid var(--signal, #f04b23); box-shadow: 0 3px 8px rgba(23, 23, 20, 0.10); display: flex; flex-direction: column; gap: 4px; height: 62px; padding: 5px; width: 44px; } .ds-flatplan-page small { color: var(--ink, #171714); font: 900 10px/1 ui-sans-serif, -apple-system, BlinkMacSystemFont, \"Segoe UI\", sans-serif; } .ds-flatplan-page i { background: var(--line, #cecec8); display: block; height: 3px; width: 90%; } .ds-flatplan-page i:first-of-type { background: var(--signal, #f04b23); height: 14px; opacity: 0.45; width: 100%; } .ds-flatplan-meta { display: flex; flex-direction: column; } .ds-flatplan-meta small { color: var(--signal, #f04b23); font: 800 10px/1.4 ui-sans-serif, -apple-system, BlinkMacSystemFont, \"Segoe UI\", sans-serif; margin-bottom: 6px; } .ds-flatplan-meta strong { color: var(--ink, #171714); font: 700 11px/1.35 ui-sans-serif, -apple-system, BlinkMacSystemFont, \"Segoe UI\", sans-serif; } .ds-flatplan:hover { background: var(--signal-soft, #fff0eb); } .ds-flatplan:focus-visible { outline: 3px solid rgba(240, 75, 35, 0.38); outline-offset: -3px; }"
+    },
+    {
+      "name": "Synthetic Workspace Disclosure",
+      "kind": "custom",
+      "refersTo": "production-sheet",
+      "description": "Ruled evidence notice that keeps synthetic and recorded context unmistakable.",
+      "html": "<div class=\"ds-disclosure\" role=\"note\"><svg viewBox=\"0 0 24 24\" aria-hidden=\"true\"><path d=\"M12 3l8 3v5c0 5-3.4 8.2-8 10-4.6-1.8-8-5-8-10V6l8-3zM8.5 12l2.2 2.2 4.8-5\"/></svg><span>Synthetic workspace · publication content, people, analytics, and benchmarks are illustrative.</span></div>",
+      "css": ".ds-disclosure { align-items: center; background: #fff8f5; border-bottom: 1px solid #eea58f; color: #7a2f1c; display: flex; font: 650 11px/1.4 ui-sans-serif, -apple-system, BlinkMacSystemFont, \"Segoe UI\", sans-serif; gap: 7px; min-height: 34px; padding: 7px 18px; } .ds-disclosure svg { fill: none; flex: 0 0 15px; height: 15px; stroke: currentColor; stroke-width: 1.7; width: 15px; }"
+    }
+  ],
+  "narrative": {
+    "northStar": "The Press Desk",
+    "overview": "PageSignal feels like a calm publication-production room: cool proof stock, black ink, measured charcoal rules, and safety orange applied with the precision of an annotation pencil. The interface is dense enough for real operating evidence but never reads as a generic dashboard; its hierarchy comes from ruled work zones, typographic contrast, and adjacency rather than decorative containers.\n\nConversation and voice are treated as first-class editorial instruments. Reader intent, citations, approval states, the selected proof, and the nine-page flatplan form one evidence chain, so an operator can move from question to source to action without leaving the publication context.\n\nThe system explicitly rejects indigo or purple-led AI chrome, dark developer-tool navigation, sparkle branding, gradients, glass effects, and soft stacks of rounded SaaS cards.",
+    "keyCharacteristics": [
+      "Cool, lightly varied paper surfaces with black and charcoal structure.",
+      "Safety orange reserved for active state, proof linkage, and consequential action.",
+      "Ruled, exact, operational components with predominantly square corners.",
+      "System sans typography for the workspace; editorial serif confined to publication content.",
+      "Conversation, source proof, and flatplan kept visibly connected."
+    ],
+    "rules": [
+      {
+        "name": "The Safety Signal Rule",
+        "body": "Safety orange identifies interaction, evidence linkage, or consequence; it is not a decorative page fill.",
+        "section": "colors"
+      },
+      {
+        "name": "The Paper Before Color Rule",
+        "body": "Establish hierarchy with stock, ink, and rules first; secondary hues belong to proof content and operational status.",
+        "section": "colors"
+      },
+      {
+        "name": "The Two Registers Rule",
+        "body": "Use the system sans for operating the publication and Georgia only for content that belongs to the publication.",
+        "section": "typography"
+      },
+      {
+        "name": "The Small Type Is Work Rule",
+        "body": "Text at 10–12px carries metadata or control meaning, so preserve contrast, line height, and clear grouping.",
+        "section": "typography"
+      },
+      {
+        "name": "The Flat Production Rule",
+        "body": "Surfaces stay flat at rest; use rules and stock changes before introducing a shadow.",
+        "section": "elevation"
+      },
+      {
+        "name": "The Loose Paper Exception",
+        "body": "Shadow belongs to physical proof sheets or temporary overlays, never to routine dashboard-style cards.",
+        "section": "elevation"
+      }
+    ],
+    "dos": [
+      "Do keep conversation, citations, the selected proof, and the flatplan visibly connected as one evidence chain.",
+      "Do establish hierarchy with paper tone, ink, 1px rules, and spacing before adding color.",
+      "Do reserve safety orange for active state, proof linkage, focus, and consequential action.",
+      "Do use 0–3px corners for routine workspace components and 44px touch targets on compact mobile actions.",
+      "Do keep synthetic-data and recorded-scenario disclosures visually explicit."
+    ],
+    "donts": [
+      "Don't introduce indigo or purple-led AI branding, sparkle motifs, gradients, or glass effects.",
+      "Don't turn the light publication rail into dark developer-tool chrome.",
+      "Don't restyle production sheets as floating rounded SaaS cards.",
+      "Don't use editorial serif for application controls, metadata, or operational tables.",
+      "Don't use a shadow where a rule or stock change can express the same hierarchy."
+    ]
+  }
+}

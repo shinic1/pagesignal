@@ -46,9 +46,28 @@ function isRecord(value: unknown): value is Record<string, unknown> {
 
 const initialMessages: ConversationMessage[] = [
   {
-    id: "welcome",
+    id: "recorded-reader",
+    role: "reader",
+    text: "Where is the voice workshop?",
+  },
+  {
+    id: "recorded-answer",
     role: "assistant",
-    text: "I use this summit guide to plan your afternoon, find a session, or explain a schedule conflict.",
+    text: "Voice as a member channel starts at 2:45 PM in Room 204. It is a 75-minute hands-on lab; bring a laptop.",
+    citations: [
+      {
+        page: 6,
+        label: "Afternoon lab",
+        quote: "2:45 PM · Room 204. Voice as a member channel.",
+      },
+    ],
+    action: {
+      name: "navigate_to_page",
+      label: "Opened page 6",
+      status: "complete",
+      detail: "Voice as a member channel",
+      targetPage: 6,
+    },
   },
 ];
 
@@ -124,7 +143,7 @@ function PublicationPage({ page }: { page: PublicationPageType }) {
 }
 
 export function ReaderWorkspace() {
-  const [currentPage, setCurrentPage] = useState(1);
+  const [currentPage, setCurrentPage] = useState(6);
   const [messages, setMessages] =
     useState<ConversationMessage[]>(initialMessages);
   const [query, setQuery] = useState("");
@@ -145,13 +164,10 @@ export function ReaderWorkspace() {
   const vapiAssistantId = process.env.NEXT_PUBLIC_VAPI_ASSISTANT_ID;
   const vapiConfigured = Boolean(vapiPublicKey && vapiAssistantId);
 
-  const visiblePages = useMemo(() => {
-    if (currentPage >= publicationPages.length) {
-      return [publicationPages[publicationPages.length - 1]];
-    }
-
-    return publicationPages.slice(currentPage - 1, currentPage + 1);
-  }, [currentPage]);
+  const visiblePages = useMemo(
+    () => [publicationPages[currentPage - 1] ?? publicationPages[0]],
+    [currentPage],
+  );
 
   const moveToPage = (page: number) => {
     setCurrentPage(
@@ -458,7 +474,7 @@ export function ReaderWorkspace() {
               <Icon name="chevron" size={15} className="flip-icon" />
             </button>
             <span>
-              {currentPage}–{Math.min(currentPage + 1, publicationPages.length)}
+              {currentPage}
               <small> / {publicationPages.length}</small>
             </span>
             <button
@@ -481,29 +497,6 @@ export function ReaderWorkspace() {
         </div>
 
         <div className="publication-stage">
-          <div className="thumbnail-rail" aria-label="Publication pages">
-            {publicationPages.map((page) => (
-              <button
-                className={
-                  visiblePages.some((visible) => visible.page === page.page)
-                    ? "active"
-                    : ""
-                }
-                key={page.page}
-                type="button"
-                aria-label={`Open page ${page.page}: ${page.title}`}
-                onClick={() => moveToPage(page.page)}
-              >
-                <span className={`thumb-preview thumb-${page.accent}`}>
-                  <small>{page.page}</small>
-                  <i />
-                  <i />
-                  <i />
-                </span>
-                <span>{page.page}</span>
-              </button>
-            ))}
-          </div>
           <div className="page-spread">
             {visiblePages.map((page) => (
               <PublicationPage page={page} key={page.page} />
@@ -533,7 +526,7 @@ export function ReaderWorkspace() {
         <header className="copilot-header">
           <div>
             <span className="assistant-avatar">
-              <Icon name="spark" size={17} />
+              <Icon name="book" size={17} />
             </span>
             <div>
               <strong>Ask Northstar</strong>
@@ -565,7 +558,7 @@ export function ReaderWorkspace() {
             <div className={`message ${message.role}`} key={message.id}>
               {message.role === "assistant" ? (
                 <span className="message-avatar">
-                  <Icon name="spark" size={13} />
+                  <Icon name="book" size={13} />
                 </span>
               ) : null}
               <div>
@@ -618,7 +611,7 @@ export function ReaderWorkspace() {
           {isThinking ? (
             <div className="message assistant thinking-message">
               <span className="message-avatar">
-                <Icon name="spark" size={13} />
+                <Icon name="book" size={13} />
               </span>
               <div className="thinking-dots">
                 <i />
@@ -686,6 +679,36 @@ export function ReaderWorkspace() {
           ) : null}
         </div>
 
+        <div className={`voice-control-strip ${isListening ? "is-live" : ""}`}>
+          <div>
+            <span>
+              <Icon name={isListening ? "activity" : "mic"} size={17} />
+            </span>
+            <div>
+              <strong>
+                {vapiConfigured ? "Vapi voice agent" : "Voice preview"}
+              </strong>
+              <small>
+                {isListening
+                  ? "Listening for a reader question"
+                  : vapiConfigured
+                    ? "Real-time voice transport ready"
+                    : voiceAvailable
+                      ? "Browser speech fallback ready"
+                      : "Voice is unavailable in this browser"}
+              </small>
+            </div>
+          </div>
+          <button
+            type="button"
+            onClick={startVoice}
+            disabled={!voiceAvailable}
+          >
+            <Icon name={isListening ? "pause" : "mic"} size={16} />
+            {isListening ? "End voice" : "Start voice"}
+          </button>
+        </div>
+
         <div className="prompt-suggestions">
           {voiceError ? (
             <span className="voice-error">
@@ -743,6 +766,35 @@ export function ReaderWorkspace() {
           <span>Demo actions only</span>
         </div>
       </aside>
+
+      <div className="flatplan-strip" aria-label="Publication flatplan">
+        <header>
+          <strong>Issue flatplan</strong>
+          <span>9 pages · select a proof</span>
+        </header>
+        <div>
+          {publicationPages.map((page) => (
+            <button
+              className={currentPage === page.page ? "active" : ""}
+              key={page.page}
+              type="button"
+              aria-label={`Open page ${page.page}: ${page.title}`}
+              onClick={() => moveToPage(page.page)}
+            >
+              <span className={`thumb-preview thumb-${page.accent}`}>
+                <small>{page.page}</small>
+                <i />
+                <i />
+                <i />
+              </span>
+              <span className="flatplan-meta">
+                <small>p. {page.page}</small>
+                <strong>{page.title}</strong>
+              </span>
+            </button>
+          ))}
+        </div>
+      </div>
     </section>
   );
 }
