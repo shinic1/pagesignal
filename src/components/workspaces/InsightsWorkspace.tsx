@@ -54,7 +54,7 @@ const recentSignals = [
     time: "10:18",
     type: "Gap",
     title: "Meal information unavailable",
-    detail: "Question safely abstained · editor follow-up suggested",
+    detail: "Assistant declined the question · editor follow-up queued",
     icon: "insights" as const,
   },
   {
@@ -81,11 +81,9 @@ export function InsightsWorkspace() {
     <section className="insights-workspace">
       <div className="workspace-intro insights-intro">
         <div>
-          <span className="section-kicker">Reader intelligence</span>
-          <h2>Turn questions into content decisions.</h2>
+          <h2>Use reader questions to plan edits.</h2>
           <p>
-            See what readers are trying to accomplish, where the publication
-            helps, and where it needs to improve.
+            See readers’ goals and the details the publication leaves out.
           </p>
         </div>
         <label className="range-picker">
@@ -159,8 +157,7 @@ export function InsightsWorkspace() {
         <article className="question-clusters panel-card">
           <header className="panel-card-header">
             <div>
-              <span className="section-kicker">Intent clusters</span>
-              <h3>What readers are asking</h3>
+              <h3>Reader questions by intent</h3>
             </div>
             <span className="sample-label">Synthetic sample · n=111</span>
           </header>
@@ -230,13 +227,13 @@ export function InsightsWorkspace() {
                 <Icon name="shield" size={13} />
               </span>
               <p>
-                The assistant abstained on all 11 turns. No unsupported answer
-                was shown.
+                The assistant declined all 11 questions and gave no unsupported
+                answer.
               </p>
             </div>
           </div>
           <div className="suggested-edit">
-            <span>Suggested next step</span>
+            <span>Recommended edit</span>
             <p>
               Add a “Meals & dietary accommodations” block to page 9 with a
               support contact and response deadline.
@@ -256,7 +253,6 @@ export function InsightsWorkspace() {
       <article className="signal-stream panel-card">
         <header className="panel-card-header">
           <div>
-            <span className="section-kicker">Audit trail</span>
             <h3>Recent reader signals</h3>
           </div>
           <button type="button">

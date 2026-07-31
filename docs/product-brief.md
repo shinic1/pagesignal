@@ -2,21 +2,20 @@
 
 ## Outcome
 
-Help a reader act on a publication without losing the editorial context, then
-help the publisher understand which questions, actions, and missing details
-matter.
+Help readers act on a publication while they can still check its source pages.
+Show publishers the questions and missing details readers encounter.
 
 ## Problem
 
-Most publication assistants stop at fluent question answering. That leaves
-three product gaps:
+Many publication assistants answer questions without showing their evidence.
+Publishers then face three gaps:
 
 - Readers cannot see why an answer should be trusted.
 - Useful intent is lost after the conversation.
 - Teams cannot compare model changes against product-specific behavior.
 
-PageSignal connects the reader experience, the model experiment, and the
-editorial learning loop.
+PageSignal gives readers cited answers. It gives product teams a model test
+bench and publishers a list of missing details.
 
 ## Primary workflows
 
@@ -36,10 +35,9 @@ precision, tool accuracy, latency, cost, and representative failure cases.
 
 ### Publisher
 
-> Show me what readers are trying to accomplish and what the issue does not
-answer.
+> Show me readers’ goals and the details missing from this issue.
 
-Question clusters and safe abstentions become a measurable editorial backlog.
+Editors use question clusters and assistant refusals to plan the next issue.
 
 ## MVP boundaries
 
@@ -55,9 +53,9 @@ Question clusters and safe abstentions become a measurable editorial backlog.
 - A new reader can build the AI-focused agenda and inspect all three sources in
   under two minutes.
 - A missing-information question produces an abstention and visible content gap.
-- Every state-changing action asks for confirmation.
-- The experiment view explains why the champion clears the routing policy.
-- The experience remains usable without Vapi, Supabase, or model credentials.
+- State-changing actions ask for confirmation.
+- The experiment view shows the champion’s guardrail results.
+- Readers can use the demo without Vapi, Supabase, or model credentials.
 
 ## Non-goals
 

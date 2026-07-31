@@ -36,9 +36,9 @@ html {
 body {
   background: var(--paper);
   color: var(--ink);
+  /* The system stack keeps this operational UI legible without a font download. */
   font-family:
-    Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI",
-    sans-serif;
+    ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
   margin: 0;
   min-height: 100vh;
   overflow-x: hidden;
@@ -310,7 +310,7 @@ button:disabled {
 
 .guardrail-card {
   align-items: flex-start;
-  background: linear-gradient(145deg, #282936, #22232c);
+  background: #23242d;
   border: 1px solid #343541;
   border-radius: 11px;
   display: flex;
@@ -321,13 +321,11 @@ button:disabled {
 
 .guardrail-icon {
   align-items: center;
-  background: rgba(185, 219, 106, 0.12);
-  border-radius: 7px;
   color: var(--lime);
   display: inline-flex;
-  height: 29px;
+  height: 20px;
   justify-content: center;
-  min-width: 29px;
+  min-width: 20px;
 }
 
 .guardrail-card strong {
@@ -468,14 +466,6 @@ button:disabled {
   color: #5a4ed2;
 }
 
-.scenario-badge > span {
-  animation: pulse 2s ease infinite;
-  background: var(--violet);
-  border-radius: 50%;
-  height: 6px;
-  width: 6px;
-}
-
 .topbar-clock,
 .source-link {
   background: white;
@@ -533,9 +523,9 @@ button:disabled {
   border-radius: 4px;
   color: white;
   display: inline-flex;
-  font-family: Georgia, serif;
+  font-family: inherit;
   font-size: 12px;
-  font-style: italic;
+  font-style: normal;
   height: 34px;
   justify-content: center;
   width: 25px;
@@ -611,9 +601,7 @@ button:disabled {
 }
 
 .publication-stage {
-  background:
-    radial-gradient(circle at 18% 5%, rgba(109, 93, 252, 0.06), transparent 28%),
-    #e8e5df;
+  background: #e8e5df;
   display: grid;
   flex: 1;
   grid-template-columns: 60px minmax(0, 1fr);
@@ -846,7 +834,7 @@ button:disabled {
   font-family: Georgia, serif;
   font-size: clamp(25px, 3.7vw, 58px);
   font-weight: 400;
-  letter-spacing: -0.06em;
+  letter-spacing: -0.03em;
   line-height: 0.92;
   margin: 4% 0;
 }
@@ -965,7 +953,7 @@ button:disabled {
   font-family: Georgia, serif;
   font-size: clamp(19px, 2.35vw, 38px);
   font-weight: 400;
-  letter-spacing: -0.055em;
+  letter-spacing: -0.03em;
   line-height: 0.98;
   margin: 3% 0 4%;
 }
@@ -1182,13 +1170,6 @@ button:disabled {
   margin-top: 4px;
 }
 
-.copilot-header div span i {
-  background: var(--green);
-  border-radius: 50%;
-  height: 5px;
-  width: 5px;
-}
-
 .scenario-pill {
   background: var(--violet-soft);
   border-radius: 10px;
@@ -1240,13 +1221,11 @@ button:disabled {
 
 .message-avatar {
   align-items: center;
-  background: var(--violet-soft);
-  border-radius: 7px;
   color: var(--violet);
   display: inline-flex;
-  height: 25px;
+  height: 22px;
   justify-content: center;
-  min-width: 25px;
+  min-width: 22px;
 }
 
 .message > div {
@@ -1297,8 +1276,6 @@ button:disabled {
 
 .citation-list button > span {
   align-items: center;
-  background: var(--violet-soft);
-  border-radius: 6px;
   color: var(--violet);
   display: inline-flex;
   font-size: 7px;
@@ -1314,7 +1291,6 @@ button:disabled {
 
 .citation-list small {
   color: var(--muted);
-  font-family: Georgia, serif;
   font-size: 7px;
   grid-column: 2;
   overflow: hidden;
@@ -1341,14 +1317,11 @@ button:disabled {
 
 .tool-event > span {
   align-items: center;
-  background: white;
-  border: 1px solid var(--line-2);
-  border-radius: 6px;
   color: var(--violet);
   display: inline-flex;
-  height: 27px;
+  height: 22px;
   justify-content: center;
-  min-width: 27px;
+  min-width: 22px;
 }
 
 .tool-event > div {
@@ -1413,13 +1386,11 @@ button:disabled {
 
 .confirmation-card > div:first-child > span {
   align-items: center;
-  background: white;
-  border-radius: 6px;
   color: var(--gold);
   display: inline-flex;
-  height: 27px;
+  height: 22px;
   justify-content: center;
-  min-width: 27px;
+  min-width: 22px;
 }
 
 .confirmation-card strong {
@@ -1478,13 +1449,11 @@ button:disabled {
 
 .saved-agenda-title > span {
   align-items: center;
-  background: var(--violet-soft);
-  border-radius: 6px;
   color: var(--violet);
   display: inline-flex;
-  height: 28px;
+  height: 22px;
   justify-content: center;
-  min-width: 28px;
+  min-width: 22px;
 }
 
 .saved-agenda-title > div {
@@ -1700,11 +1669,11 @@ button:disabled {
 }
 
 .workspace-intro h2 {
-  font-family: Georgia, serif;
-  font-size: clamp(27px, 3.2vw, 45px);
-  font-weight: 400;
-  letter-spacing: -0.055em;
-  line-height: 1;
+  font-family: inherit;
+  font-size: clamp(25px, 2.6vw, 38px);
+  font-weight: 780;
+  letter-spacing: -0.025em;
+  line-height: 1.08;
   margin: 7px 0 9px;
 }
 
@@ -1781,10 +1750,10 @@ button:disabled {
 
 .benchmark-disclosure {
   align-items: center;
-  background: var(--gold-soft);
-  border: 1px solid #ead6a6;
+  background: var(--panel);
+  border: 1px solid var(--line);
   border-radius: 8px;
-  color: #766241;
+  color: var(--muted);
   display: flex;
   font-size: 8px;
   gap: 7px;
@@ -1794,11 +1763,11 @@ button:disabled {
 }
 
 .benchmark-disclosure svg {
-  color: var(--gold);
+  color: var(--violet);
 }
 
 .benchmark-disclosure small {
-  color: #9c8967;
+  color: var(--muted-2);
   margin-left: auto;
 }
 
@@ -1999,7 +1968,7 @@ button:disabled {
 }
 
 .evaluation-progress span {
-  background: linear-gradient(90deg, var(--violet), #a69cfd);
+  background: var(--violet);
   display: block;
   height: 100%;
   transition: width 100ms linear;
@@ -2170,13 +2139,11 @@ button:disabled {
 
 .guardrail-list > div > span {
   align-items: center;
-  background: var(--green-soft);
-  border-radius: 50%;
   color: var(--green);
   display: inline-flex;
-  height: 21px;
+  height: 18px;
   justify-content: center;
-  min-width: 21px;
+  min-width: 18px;
 }
 
 .guardrail-list > div > div {
@@ -2352,31 +2319,18 @@ button:disabled {
 
 .metric-icon {
   align-items: center;
-  border-radius: 8px;
-  display: inline-flex;
-  height: 34px;
-  justify-content: center;
-  min-width: 34px;
-}
-
-.metric-icon.violet {
-  background: var(--violet-soft);
   color: var(--violet);
+  display: inline-flex;
+  height: 24px;
+  justify-content: center;
+  min-width: 24px;
 }
 
-.metric-icon.blue {
-  background: var(--blue-soft);
-  color: var(--blue);
-}
-
-.metric-icon.coral {
-  background: var(--coral-soft);
-  color: var(--coral);
-}
-
+.metric-icon.violet,
+.metric-icon.blue,
+.metric-icon.coral,
 .metric-icon.lime {
-  background: var(--lime-soft);
-  color: #789d2a;
+  color: var(--violet);
 }
 
 .insight-metrics article > div:nth-child(2) {
@@ -2527,9 +2481,7 @@ button:disabled {
 
 .cluster-name small {
   color: var(--muted);
-  font-family: Georgia, serif;
   font-size: 7px;
-  font-style: italic;
   margin-top: 4px;
 }
 
@@ -2609,9 +2561,7 @@ button:disabled {
 
 .gap-question p {
   color: var(--muted);
-  font-family: Georgia, serif;
   font-size: 8px;
-  font-style: italic;
   margin: 5px 0 0;
 }
 
@@ -2628,13 +2578,11 @@ button:disabled {
 
 .gap-evidence > div > span {
   align-items: center;
-  background: #f1efe9;
-  border-radius: 6px;
   color: var(--muted);
   display: inline-flex;
-  height: 24px;
+  height: 20px;
   justify-content: center;
-  min-width: 24px;
+  min-width: 20px;
 }
 
 .gap-evidence p {
@@ -2728,30 +2676,17 @@ button:disabled {
 
 .signal-icon {
   align-items: center;
-  border-radius: 7px;
-  display: inline-flex;
-  height: 28px;
-  justify-content: center;
-  width: 28px;
-}
-
-.signal-action {
-  background: var(--violet-soft);
   color: var(--violet);
+  display: inline-flex;
+  height: 22px;
+  justify-content: center;
+  width: 22px;
 }
 
-.signal-gap {
-  background: var(--coral-soft);
-  color: var(--coral);
-}
-
-.signal-intent {
-  background: var(--gold-soft);
-  color: var(--gold);
-}
-
+.signal-action,
+.signal-gap,
+.signal-intent,
 .signal-navigation {
-  background: var(--blue-soft);
   color: var(--blue);
 }
 
@@ -2785,16 +2720,6 @@ button:disabled {
 
 .sidebar-scrim {
   display: none;
-}
-
-@keyframes pulse {
-  0%,
-  100% {
-    box-shadow: 0 0 0 0 rgba(109, 93, 252, 0.35);
-  }
-  50% {
-    box-shadow: 0 0 0 5px rgba(109, 93, 252, 0);
-  }
 }
 
 @keyframes bounce {

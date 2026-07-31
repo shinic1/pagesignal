@@ -52,7 +52,7 @@ function fallbackSearch(query: string): AssistantResponse {
   if (!top || top.score === 0) {
     return {
       answer:
-        "I couldn’t find that in this publication. I’ve marked it as a content gap instead of guessing.",
+        "The publication doesn’t cover that. I added the question to Reader signals for the editor.",
       citations: [],
       action: {
         name: "record_content_gap",
@@ -97,7 +97,7 @@ export function answerPublicationQuestion(rawQuery: string): AssistantResponse {
   ) {
     return {
       answer:
-        "The publication doesn’t include meal or dietary information, so I can’t answer that reliably. I’ve recorded the question for the editor.",
+        "The publication doesn’t include meal or dietary information. I recorded the question for the editor.",
       citations: [],
       action: {
         name: "record_content_gap",
@@ -117,7 +117,7 @@ export function answerPublicationQuestion(rawQuery: string): AssistantResponse {
       .join(", ");
 
     return {
-      answer: `I found three complementary sessions with no overlap: ${agenda}. The 2:45 PM data clinic conflicts with the voice lab, so I left it out.`,
+      answer: `Your AI afternoon includes ${agenda}. The 2:45 PM data clinic conflicts with the voice lab, so the agenda excludes it.`,
       citations: [
         citation(
           5,
@@ -161,7 +161,7 @@ export function answerPublicationQuestion(rawQuery: string): AssistantResponse {
       citations: [
         citation(
           6,
-          "2:45 PM · Room 204 — Voice as a member channel.",
+          "2:45 PM · Room 204. Voice as a member channel.",
         ),
       ],
       navigateTo: 6,
@@ -182,7 +182,7 @@ export function answerPublicationQuestion(rawQuery: string): AssistantResponse {
   ) {
     return {
       answer:
-        "I found the voice lab at 2:45 PM in Room 204. I can add a reservation request to this demo attendee profile, but I need your confirmation first.",
+        "The voice lab starts at 2:45 PM in Room 204. Confirm the request and I’ll add it to this demo attendee profile.",
       citations: [
         citation(
           6,
@@ -214,7 +214,7 @@ export function answerPublicationQuestion(rawQuery: string): AssistantResponse {
       citations: [
         citation(5, "Responsible personalization · 1:30 PM"),
         citation(6, "Voice as a member channel · 2:45 PM"),
-        citation(8, "From insight to action · 4:15 PM"),
+        citation(8, "Run the next responsible experiment · 4:15 PM"),
       ],
       action: {
         name: "send_agenda",
@@ -231,7 +231,7 @@ export function answerPublicationQuestion(rawQuery: string): AssistantResponse {
   ) {
     return {
       answer:
-        "Live captions are available in Studio A, and every room has step-free access. The responsible personalization panel is in Studio A.",
+        "Studio A has live captions. You can reach each room without stairs. The responsible personalization panel meets in Studio A.",
       citations: [
         citation(5, "Responsible personalization · 1:30 PM · Studio A"),
         citation(

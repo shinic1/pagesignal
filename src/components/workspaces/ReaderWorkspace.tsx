@@ -48,7 +48,7 @@ const initialMessages: ConversationMessage[] = [
   {
     id: "welcome",
     role: "assistant",
-    text: "I’m grounded in this summit guide. Ask me to plan your afternoon, find a session, or explain a schedule conflict.",
+    text: "I use this summit guide to plan your afternoon, find a session, or explain a schedule conflict.",
   },
 ];
 
@@ -406,7 +406,7 @@ export function ReaderWorkspace() {
       detail:
         activeAction.name === "send_agenda"
           ? "No external email was sent."
-          : "Synthetic inventory only—no real reservation was made.",
+          : "This demo does not change real inventory.",
     };
 
     setMessages((current) => [
@@ -444,7 +444,7 @@ export function ReaderWorkspace() {
               N
             </span>
             <div>
-              <strong>Belonging is a system.</strong>
+              <strong>Build member loyalty.</strong>
               <span>Northstar Member Summit · 9 pages</span>
             </div>
           </div>
@@ -538,7 +538,6 @@ export function ReaderWorkspace() {
             <div>
               <strong>Ask Northstar</strong>
               <span>
-                <i />
                 Grounded in 9 pages
               </span>
             </div>
@@ -558,8 +557,7 @@ export function ReaderWorkspace() {
           <div className="assistant-boundary">
             <Icon name="shield" size={14} />
             <span>
-              I answer from this publication and show my sources. I won’t
-              invent missing details.
+              I answer from this publication and cite the pages I use.
             </span>
           </div>
 
@@ -722,7 +720,7 @@ export function ReaderWorkspace() {
             placeholder={
               voiceAvailable
                 ? "Ask about this publication…"
-                : "Voice isn’t available—type instead"
+                : "Voice is unavailable. Type your question."
             }
             value={query}
             maxLength={500}
@@ -742,7 +740,7 @@ export function ReaderWorkspace() {
             <Icon name="mic" size={11} />
             {vapiConfigured ? "Vapi real-time voice" : "Browser voice preview"}
           </span>
-          <span>Actions are simulated</span>
+          <span>Demo actions only</span>
         </div>
       </aside>
     </section>

@@ -1,36 +1,34 @@
 # PageSignal
 
-PageSignal is an independent product concept for turning a digital publication
-into a grounded, conversational experience—and turning reader questions into
-measurable product learning.
+PageSignal lets readers ask questions about a digital publication, check cited
+pages, and approve follow-up actions. Publishers can review questions that the
+source does not answer.
 
-The prototype connects three experiences:
+The prototype has three workspaces:
 
-1. **Reader** — ask a synthetic publication a question by text or voice, inspect
-   page-level citations, navigate to the source, and approve simulated actions.
-2. **Experiments** — compare recorded model candidates across groundedness,
+1. **Reader.** Ask a synthetic publication by text or voice, check page
+   citations, and approve demo actions.
+2. **Experiments.** Compare recorded model candidates across groundedness,
    citation precision, tool accuracy, latency, and estimated cost.
-3. **Reader signals** — cluster reader intent, expose unanswered questions, and
-   convert content gaps into an editorial backlog.
+3. **Reader signals.** Review reader intent and add missing details to the
+   editorial backlog.
 
 All publication content, people, analytics, and benchmark results are synthetic.
 
 ## Live demo
 
-[Open PageSignal](https://pagesignal.pages.dev) — deployed on Cloudflare.
+[Open PageSignal](https://pagesignal.pages.dev). It runs on Cloudflare.
 
 ## Product principles
 
-- **Evidence before fluency.** Every supported answer links back to a source
-  page.
-- **Abstention is a product behavior.** Missing information becomes a visible
-  content gap instead of an invented response.
-- **Approval before mutation.** Email, registration, and other state-changing
-  actions require explicit confirmation.
-- **Route on guardrails.** A candidate only becomes the default when it clears
-  product-specific thresholds—not because it has the largest aggregate score.
-- **A useful demo without credentials.** The public experience runs a
-  deterministic scenario and recorded benchmark when provider keys are absent.
+- **Cite supported answers.** Readers can open each source page.
+- **Record missing details.** The assistant adds unanswered questions to the
+  content backlog.
+- **Confirm state changes.** Email and registration actions ask for approval.
+- **Route with guardrails.** The team selects a model after it clears the
+  citation, tool, and latency thresholds.
+- **Support credential-free review.** The public demo uses deterministic
+  responses and recorded benchmarks when provider keys are absent.
 
 ## Stack
 
@@ -42,13 +40,13 @@ All publication content, people, analytics, and benchmark results are synthetic.
 - Deterministic, citation-bearing scenario engine
 - Vitest product-behavior evaluations
 
-The production architecture provides a server-side Vapi tool boundary at
+The server exposes the Vapi tool boundary at
 `POST /api/vapi/tools`. A configured Vapi assistant calls
 `answer_publication_question`; the server validates the request, retrieves the
 grounded scenario result, and returns structured citations and safe actions.
-Reader events are accepted at `POST /api/events`; when Supabase is configured,
-the server stores allowlisted event types without raw question text or direct
-reader identifiers.
+The client sends reader events to `POST /api/events`. A configured Supabase
+store saves allowlisted event types without raw question text or reader
+identifiers.
 
 ## Run locally
 

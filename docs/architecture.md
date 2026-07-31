@@ -56,7 +56,6 @@
 
 ## Demo resilience
 
-The public experience uses a deterministic scenario when credentials are
-absent. This makes the complete interaction inspectable and repeatable while
-keeping provider-specific integrations available behind explicit environment
-configuration.
+The public demo uses deterministic responses when credentials are absent.
+Reviewers can repeat the same interaction and inspect each result. Environment
+variables enable the provider integrations.

@@ -3,13 +3,13 @@ import type { Metadata, Viewport } from "next";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "PageSignal — Conversational publications",
+  title: "PageSignal | Ask your publication",
   description:
-    "A grounded conversational publication experience with a multi-model evaluation and routing console.",
+    "Ask a publication by text or voice, check cited pages, and compare model behavior.",
   openGraph: {
     title: "PageSignal",
     description:
-      "From reader question to grounded answer, approved action, and measurable learning.",
+      "Ask questions, check cited pages, and review the details readers cannot find.",
     type: "website",
   },
 };

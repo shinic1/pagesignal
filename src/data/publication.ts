@@ -5,8 +5,8 @@ export const publicationPages: PublicationPage[] = [
     page: 1,
     section: "Cover",
     eyebrow: "Northstar member summit · 2026",
-    title: "Belonging is a system.",
-    deck: "Two days of practical ideas for building member experiences people choose to return to.",
+    title: "Build member loyalty.",
+    deck: "Spend two days learning how to recognize member needs and respond with useful service.",
     body: [
       "A synthetic conference publication created for the Voice Lab product exercise.",
     ],
@@ -17,20 +17,19 @@ export const publicationPages: PublicationPage[] = [
     page: 2,
     section: "Welcome",
     eyebrow: "A note from the program chair",
-    title: "Start with the signal behind the metric.",
-    deck: "This year’s program is organized around one question: what makes a member feel recognized?",
+    title: "Use the signal behind each metric.",
+    deck: "The program focuses on the signals that help teams recognize member needs.",
     body: [
-      "Across the summit, strategists, operators, and product teams will turn behavioral signals into useful—not intrusive—member experiences.",
-      "Every session is designed to leave you with a decision, a template, or a test you can run when you return to work.",
+      "Strategists, operators, and product teams will use behavioral signals to build useful member experiences that respect privacy.",
+      "Each session gives you a decision, template, or test to use at work.",
     ],
-    quote: "The goal is not more communication. It is more relevant communication.",
     accent: "coral",
   },
   {
     page: 3,
     section: "Morning keynote",
     eyebrow: "9:00 AM · Studio A",
-    title: "Signals, not segments",
+    title: "Read the signals behind member behavior",
     deck: "Mara Bell · Chief Experience Officer, Common Thread",
     body: [
       "Move beyond static member personas. Mara maps the small signals that reveal momentum, hesitation, and unmet needs across a member journey.",
@@ -44,7 +43,7 @@ export const publicationPages: PublicationPage[] = [
     page: 4,
     section: "Morning workshop",
     eyebrow: "11:00 AM · The Foundry",
-    title: "Retention systems you can actually operate",
+    title: "Run a practical retention program",
     deck: "A hands-on lifecycle mapping workshop with Imani Ross.",
     body: [
       "Map one renewal journey from first signal to human follow-up. Participants will leave with an operating cadence, owner map, and test backlog.",
@@ -58,13 +57,12 @@ export const publicationPages: PublicationPage[] = [
     section: "Afternoon panel",
     eyebrow: "1:30 PM · Studio A",
     title: "Responsible personalization",
-    deck: "Where useful relevance ends and surveillance begins.",
+    deck: "Set clear limits for consent, data use, and personalized outreach.",
     body: [
       "Three association leaders examine consent, explainability, and data minimization in AI-assisted member experiences.",
       "The panel closes with a review checklist for content, recommendation, and outreach workflows.",
     ],
     meta: ["AI", "Governance", "60 minutes"],
-    quote: "Personalization earns trust when a member can understand—and change—the signal.",
     accent: "coral",
   },
   {
@@ -85,7 +83,7 @@ export const publicationPages: PublicationPage[] = [
     section: "Afternoon clinic",
     eyebrow: "2:45 PM · The Foundry",
     title: "First-party data clinic",
-    deck: "Turn scattered engagement events into a useful measurement plan.",
+    deck: "Build a measurement plan from scattered engagement events.",
     body: [
       "Bring one unresolved analytics question. Facilitators will help identify the minimum viable event model, consent boundary, and reporting view.",
       "This clinic runs at the same time as the Voice as a member channel lab.",
@@ -97,10 +95,10 @@ export const publicationPages: PublicationPage[] = [
     page: 8,
     section: "Closing session",
     eyebrow: "4:15 PM · Studio A",
-    title: "From insight to action",
-    deck: "A field guide for running the next responsible experiment.",
+    title: "Run the next responsible experiment",
+    deck: "Use a field guide to test one member outcome.",
     body: [
-      "Close the day with a lightweight method for translating a hypothesis into an observable member outcome.",
+      "Close the day by linking one hypothesis to an observable member outcome.",
       "The session covers test design, evidence thresholds, and the decision to scale, revise, or stop.",
     ],
     meta: ["Experimentation", "All levels", "45 minutes"],
@@ -110,7 +108,7 @@ export const publicationPages: PublicationPage[] = [
     page: 9,
     section: "Plan your visit",
     eyebrow: "Practical details",
-    title: "Everything you need for a smooth summit.",
+    title: "Plan your summit day.",
     deck: "Registration, accessibility, transit, and support.",
     body: [
       "The attendee desk opens at 8:00 AM in the Harbor House atrium. Workshop changes can be made until 30 minutes before a session, subject to capacity.",
@@ -141,7 +139,7 @@ export const agendaItems = [
   },
   {
     time: "4:15 PM",
-    title: "From insight to action",
+    title: "Run the next responsible experiment",
     page: 8,
   },
 ];

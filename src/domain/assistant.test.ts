@@ -8,7 +8,7 @@ describe("answerPublicationQuestion", () => {
 
     expect(result.action?.name).toBe("create_agenda");
     expect(result.citations.map((item) => item.page)).toEqual([5, 6, 8]);
-    expect(result.answer).toContain("left it out");
+    expect(result.answer).toContain("agenda excludes it");
   });
 
   it("requires confirmation before a reservation action", () => {
