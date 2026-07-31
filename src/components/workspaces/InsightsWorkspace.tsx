@@ -98,50 +98,27 @@ export function InsightsWorkspace() {
 
       <div className="insight-metrics">
         <article>
-          <span className="metric-icon violet">
-            <Icon name="activity" size={17} />
-          </span>
           <div>
             <small>Reader turns</small>
             <strong>126</strong>
             <span className="metric-change positive">↑ 18% from baseline</span>
           </div>
-          <svg viewBox="0 0 120 44" aria-hidden="true">
-            <path d="M2 37 C18 36 19 26 34 29 S51 35 62 20 82 29 91 14 105 12 118 4" />
-          </svg>
         </article>
         <article>
-          <span className="metric-icon blue">
-            <Icon name="target" size={17} />
-          </span>
           <div>
             <small>Grounded answer rate</small>
             <strong>94.4%</strong>
             <span className="metric-change">119 cited answers</span>
           </div>
-          <div className="donut" style={{ "--value": "94.4%" } as React.CSSProperties}>
-            <span>94</span>
-          </div>
         </article>
         <article>
-          <span className="metric-icon coral">
-            <Icon name="route" size={17} />
-          </span>
           <div>
             <small>Approved actions</small>
             <strong>31</strong>
             <span className="metric-change positive">24.6% of turns</span>
           </div>
-          <div className="mini-bars" aria-hidden="true">
-            {[20, 32, 28, 42, 37, 55, 68].map((height, index) => (
-              <i key={index} style={{ height }} />
-            ))}
-          </div>
         </article>
         <article>
-          <span className="metric-icon lime">
-            <Icon name="insights" size={17} />
-          </span>
           <div>
             <small>Content gaps</small>
             <strong>{gapResolved ? 3 : 4}</strong>
@@ -149,7 +126,6 @@ export function InsightsWorkspace() {
               {gapResolved ? "1 resolved today" : "1 needs attention"}
             </span>
           </div>
-          <span className="gap-badge">{gapResolved ? "3" : "4"}</span>
         </article>
       </div>
 
@@ -193,7 +169,6 @@ export function InsightsWorkspace() {
         >
           <header className="panel-card-header compact">
             <div>
-              <span className="section-kicker">Priority content gap</span>
               <h3>{gapResolved ? "Marked for next issue" : "Meals & dietary needs"}</h3>
             </div>
             <span className="gap-priority">

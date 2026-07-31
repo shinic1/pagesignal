@@ -167,7 +167,6 @@ export function PageSignal() {
               <Icon name="menu" size={19} />
             </button>
             <div>
-              <span>{current.description}</span>
               <h1>{current.label}</h1>
             </div>
           </div>
