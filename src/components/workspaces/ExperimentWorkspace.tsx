@@ -5,40 +5,6 @@ import { useEffect, useMemo, useState } from "react";
 import { Icon } from "@/src/components/Icon";
 import { evalCases, evalModels } from "@/src/data/evaluations";
 
-function ScoreRing({
-  value,
-  color,
-  size = 42,
-}: {
-  value: number;
-  color: string;
-  size?: number;
-}) {
-  const radius = 16;
-  const circumference = 2 * Math.PI * radius;
-  const offset = circumference - (value / 100) * circumference;
-
-  return (
-    <span className="score-ring" style={{ height: size, width: size }}>
-      <svg viewBox="0 0 40 40" aria-hidden="true">
-        <circle className="score-ring-track" cx="20" cy="20" r={radius} />
-        <circle
-          className="score-ring-value"
-          cx="20"
-          cy="20"
-          r={radius}
-          style={{
-            stroke: color,
-            strokeDasharray: circumference,
-            strokeDashoffset: offset,
-          }}
-        />
-      </svg>
-      <strong>{Math.round(value)}</strong>
-    </span>
-  );
-}
-
 export function ExperimentWorkspace() {
   const [selectedModel, setSelectedModel] = useState(evalModels[0].id);
   const [promptVersion, setPromptVersion] = useState("v7 · grounded-actions");
@@ -94,7 +60,6 @@ export function ExperimentWorkspace() {
     <section className="experiment-workspace">
       <div className="workspace-intro experiment-intro">
         <div>
-          <span className="section-kicker">Experiment 018</span>
           <h2>Grounded reader actions</h2>
           <p>
             Select the smallest model after it clears the citation, tool, and
@@ -171,12 +136,9 @@ export function ExperimentWorkspace() {
                     <em>Champion</em>
                   ) : null}
                 </span>
-                <span>
-                  <ScoreRing
-                    value={model.passRate}
-                    color={model.color}
-                    size={40}
-                  />
+                <span className="model-pass-rate">
+                  <strong>{model.passRate.toFixed(1)}%</strong>
+                  <small>benchmark</small>
                 </span>
                 <span>
                   <strong>{model.groundedness.toFixed(1)}%</strong>
@@ -226,11 +188,9 @@ export function ExperimentWorkspace() {
               <strong>{activeModel.provider}</strong>
               <span>{activeModel.profile}</span>
             </div>
-            <ScoreRing
-              value={activeModel.passRate}
-              color={activeModel.color}
-              size={48}
-            />
+            <strong className="champion-score">
+              {activeModel.passRate.toFixed(1)}%
+            </strong>
           </div>
 
           <div className="routing-logic">
