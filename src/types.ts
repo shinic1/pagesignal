@@ -8,7 +8,7 @@ export type PublicationPage = {
   deck: string;
   body: string[];
   meta?: string[];
-  accent: "violet" | "coral" | "blue" | "lime" | "gold";
+  accent: "orange" | "coral" | "blue" | "lime" | "gold";
   quote?: string;
   stat?: {
     value: string;

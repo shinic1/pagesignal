@@ -11,25 +11,21 @@ import type { WorkspaceView } from "@/src/types";
 const navItems: {
   id: WorkspaceView;
   label: string;
-  description: string;
   icon: IconName;
 }[] = [
   {
     id: "reader",
     label: "Reader",
-    description: "Conversation preview",
     icon: "book",
   },
   {
     id: "experiments",
     label: "Experiments",
-    description: "Evaluate and route",
     icon: "activity",
   },
   {
     id: "insights",
     label: "Reader signals",
-    description: "Review reader questions",
     icon: "insights",
   },
 ];
@@ -63,15 +59,7 @@ export function PageSignal() {
     <div className="lab-shell">
       <aside className={`lab-sidebar ${navOpen ? "is-open" : ""}`}>
         <div className="brand-lockup">
-          <div className="brand-mark" aria-hidden="true">
-            <span />
-            <span />
-            <span />
-          </div>
-          <div>
-            <strong>PageSignal</strong>
-            <span>Conversational publications</span>
-          </div>
+          <strong>PageSignal</strong>
           <button
             className="mobile-close"
             type="button"
@@ -83,21 +71,16 @@ export function PageSignal() {
         </div>
 
         <div className="sidebar-context">
-          <span className="context-label">Workspace</span>
           <button type="button">
-            <span className="context-icon">
-              <Icon name="spark" size={15} />
-            </span>
             <span>
               <strong>Northstar Summit</strong>
-              <small>Prototype publication</small>
+              <small>9-page proof</small>
             </span>
             <Icon name="chevron" size={14} />
           </button>
         </div>
 
         <nav className="sidebar-nav" aria-label="Product areas">
-          <span className="nav-section-label">Build and learn</span>
           {navItems.map((item) => (
             <button
               className={view === item.id ? "active" : ""}
@@ -113,7 +96,6 @@ export function PageSignal() {
               </span>
               <span>
                 <strong>{item.label}</strong>
-                <small>{item.description}</small>
               </span>
               {item.id === "insights" ? (
                 <span className="nav-count">4</span>
@@ -123,16 +105,6 @@ export function PageSignal() {
         </nav>
 
         <div className="sidebar-spacer" />
-
-        <div className="guardrail-card">
-          <span className="guardrail-icon">
-            <Icon name="shield" size={17} />
-          </span>
-          <div>
-            <strong>Citations and approval</strong>
-            <p>Answers cite pages. Email and registration require approval.</p>
-          </div>
-        </div>
 
         <div className="sidebar-footer">
           <div className="profile-avatar">NB</div>
@@ -168,6 +140,7 @@ export function PageSignal() {
             </button>
             <div>
               <h1>{current.label}</h1>
+              <span className="topbar-publication">Northstar Member Summit</span>
             </div>
           </div>
           <div className="topbar-actions">
@@ -191,10 +164,10 @@ export function PageSignal() {
         </header>
 
         <div className="standalone-notice">
-          <Icon name="spark" size={14} />
+          <Icon name="shield" size={14} />
           <span>
-            Independent product concept. Publication content, people, analytics,
-            and benchmarks are synthetic.
+            Synthetic workspace · publication content, people, analytics, and
+            benchmarks are illustrative.
           </span>
         </div>
 

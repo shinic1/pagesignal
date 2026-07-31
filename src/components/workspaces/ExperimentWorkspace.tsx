@@ -125,9 +125,6 @@ export function ExperimentWorkspace() {
                 onClick={() => setSelectedModel(model.id)}
               >
                 <span className="model-identity">
-                  <i style={{ background: model.color }}>
-                    {model.provider.slice(0, 1)}
-                  </i>
                   <span>
                     <strong>{model.provider}</strong>
                     <small>{model.profile}</small>
@@ -177,12 +174,6 @@ export function ExperimentWorkspace() {
           </header>
 
           <div className="champion-card">
-            <span
-              className="champion-logo"
-              style={{ background: activeModel.color }}
-            >
-              {activeModel.provider.slice(0, 1)}
-            </span>
             <div>
               <small>Selected candidate</small>
               <strong>{activeModel.provider}</strong>

@@ -12,7 +12,7 @@ export const evalModels: EvalModel[] = [
     cost: 0.0038,
     passRate: 96.7,
     status: "champion",
-    color: "#6d5dfc",
+    color: "#f04b23",
   },
   {
     id: "claude-balanced",

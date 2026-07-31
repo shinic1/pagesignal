@@ -10,7 +10,7 @@ export const publicationPages: PublicationPage[] = [
     body: [
       "A synthetic conference publication created for the Voice Lab product exercise.",
     ],
-    accent: "violet",
+    accent: "orange",
     meta: ["October 15–16", "Harbor House · Chicago"],
   },
   {
@@ -76,7 +76,7 @@ export const publicationPages: PublicationPage[] = [
       "The lab includes a live evaluation of interruption handling, source grounding, and tool-selection accuracy. Bring a laptop; no prior voice experience is required.",
     ],
     meta: ["Voice AI", "Hands-on", "75 minutes"],
-    accent: "violet",
+    accent: "orange",
   },
   {
     page: 7,

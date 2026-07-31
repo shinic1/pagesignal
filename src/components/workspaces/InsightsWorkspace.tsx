@@ -9,7 +9,7 @@ const clusters = [
     label: "Agenda planning",
     count: 38,
     change: "+12%",
-    color: "#6d5dfc",
+    color: "#f04b23",
     example: "Which AI sessions don’t overlap?",
   },
   {
