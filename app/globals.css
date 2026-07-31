@@ -1196,6 +1196,11 @@ button:disabled {
   padding: 5px 7px;
 }
 
+.scenario-pill.vapi-ready {
+  background: var(--green-soft);
+  color: #237d65;
+}
+
 .copilot-transcript {
   flex: 1;
   overflow-y: auto;
@@ -1550,6 +1555,19 @@ button:disabled {
   overflow-x: auto;
   padding: 0 12px 8px;
   scrollbar-width: none;
+}
+
+.voice-error {
+  align-items: center;
+  background: var(--coral-soft);
+  border: 1px solid #f1c9be;
+  border-radius: 12px;
+  color: #aa4e3d;
+  display: inline-flex;
+  font-size: 7px;
+  gap: 4px;
+  padding: 5px 8px;
+  white-space: nowrap;
 }
 
 .prompt-suggestions::-webkit-scrollbar {

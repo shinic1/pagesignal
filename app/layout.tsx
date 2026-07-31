@@ -3,11 +3,11 @@ import type { Metadata, Viewport } from "next";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "Joomag Voice Lab — Independent product concept",
+  title: "PageSignal — Conversational publications",
   description:
     "A grounded conversational publication experience with a multi-model evaluation and routing console.",
   openGraph: {
-    title: "Joomag Voice Lab",
+    title: "PageSignal",
     description:
       "From reader question to grounded answer, approved action, and measurable learning.",
     type: "website",

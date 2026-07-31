@@ -1,6 +1,6 @@
-# Voice Lab
+# PageSignal
 
-Voice Lab is an independent product concept for turning a digital publication
+PageSignal is an independent product concept for turning a digital publication
 into a grounded, conversational experience—and turning reader questions into
 measurable product learning.
 
@@ -14,7 +14,6 @@ The prototype connects three experiences:
    convert content gaps into an editorial backlog.
 
 All publication content, people, analytics, and benchmark results are synthetic.
-The project is not affiliated with or endorsed by Joomag.
 
 ## Product principles
 
