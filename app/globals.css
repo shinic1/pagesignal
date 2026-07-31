@@ -1132,6 +1132,8 @@ button:disabled {
   flex-direction: column;
   height: calc(100vh - 96px);
   min-height: 620px;
+  min-width: 0;
+  overflow: hidden;
   position: sticky;
   top: 96px;
 }
@@ -1553,6 +1555,7 @@ button:disabled {
   display: flex;
   gap: 5px;
   overflow-x: auto;
+  max-width: 100%;
   padding: 0 12px 8px;
   scrollbar-width: none;
 }
@@ -2898,16 +2901,19 @@ button:disabled {
   }
 
   .reader-workspace {
-    grid-template-columns: 1fr;
+    grid-template-columns: minmax(0, 1fr);
+    max-width: 100vw;
+    overflow: hidden;
   }
 
   .copilot-panel {
     border-left: 0;
     border-top: 1px solid var(--line);
     height: auto;
-    min-height: 620px;
+    min-height: 0;
     position: relative;
     top: auto;
+    width: 100%;
   }
 
   .publication-stage {
@@ -2919,8 +2925,8 @@ button:disabled {
   }
 
   .copilot-transcript {
-    max-height: 570px;
-    min-height: 360px;
+    max-height: none;
+    min-height: 240px;
   }
 
   .workspace-intro {
@@ -2983,6 +2989,7 @@ button:disabled {
 
   .publication-title {
     max-width: 48%;
+    min-width: 0;
   }
 
   .publication-title strong,
@@ -3011,6 +3018,7 @@ button:disabled {
   }
 
   .page-spread {
+    min-width: 0;
     padding: 20px 14px;
   }
 
@@ -3064,6 +3072,10 @@ button:disabled {
   .experiment-workspace,
   .insights-workspace {
     padding: 22px 13px 36px;
+  }
+
+  .copilot-transcript {
+    min-height: 220px;
   }
 
   .workspace-intro h2 {

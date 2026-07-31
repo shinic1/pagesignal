@@ -271,6 +271,22 @@ export function ReaderWorkspace() {
         ? response.action
         : null,
     );
+    void fetch("/api/events", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({
+        eventType:
+          response.action?.name === "record_content_gap"
+            ? "reader.content_gap"
+            : "reader.answer",
+        page: response.navigateTo,
+        properties: {
+          citationCount: response.citations.length,
+          action: response.action?.name ?? "none",
+          transport: voiceTransport,
+        },
+      }),
+    }).catch(() => undefined);
     window.setTimeout(() => {
       transcriptRef.current?.scrollTo({
         top: transcriptRef.current.scrollHeight,
@@ -405,6 +421,17 @@ export function ReaderWorkspace() {
         action: confirmed,
       },
     ]);
+    void fetch("/api/events", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({
+        eventType: "reader.action_confirmed",
+        properties: {
+          action: activeAction.name,
+          transport: voiceTransport,
+        },
+      }),
+    }).catch(() => undefined);
     setActiveAction(null);
   };
 
